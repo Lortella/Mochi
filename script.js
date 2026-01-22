@@ -138,10 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updatePlayerUI() {
         if (bgMusic.paused) {
-            musicToggle.innerHTML = "▶"; // Ikon Play
+            musicToggle.innerHTML = ""; // Ikon Play
             visualizer.classList.add('paused');
         } else {
-            musicToggle.innerHTML = "⏸"; // Ikon Pause
+            musicToggle.innerHTML = ""; // Ikon Pause
             visualizer.classList.remove('paused');
         }
     }
