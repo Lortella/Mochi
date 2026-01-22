@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('next-btn');
 
     // --- PESAN UCAPAN ---
-    const message = "Selamat ulang tahun yang ke-20 ya sayang! 🎉 cieeee kepala duaa, Semoga panjang umur, sehat selalu, makin cantik, makin pinter, dan makin sayang sama akuuu. Maaf ya cuma bisa kasih web sederhana iniii, tapi effort dan cintaku ke kamu ga sederhana kok! I love you Mochiii! 💖";
+    const message = "Selamat ulang tahun yang ke-20 ya sayang! 🎉 cieeee kepala duaa, Semoga panjang umur, sehat selalu, makin cantik, makin pinter, dan makin sayang sama akuuu. Semogaa dengan bertambahnyaa umurr kamuuu semakinn dewasaa dan juga lebih berani. Semoga tergapai apapun yang kamu inginkan. Maaf ya cuma bisa kasih web sederhana iniii, tapi effort dan cintaku ke kamu ga sederhana kok! I love you Mochiii! 💖";
     // --------------------
 
     // --- KONFIGURASI LAGU & FOTO ---
