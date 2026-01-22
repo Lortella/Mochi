@@ -1,0 +1,341 @@
+/* Reset dasar agar tampilan rapi di semua browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Background Pink Lucu */
+    background-color: #ffe6f2; 
+    background-image: radial-gradient(#ffcce6 15%, transparent 16%), radial-gradient(#ffcce6 15%, transparent 16%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    
+    font-family: 'Nunito', sans-serif; /* Font tulisan biasa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #d63384; /* Warna teks pink tua */
+    overflow-x: hidden; /* Mencegah scroll ke samping */
+}
+
+/* Kotak Utama (Kartu) */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.6);
+    max-width: 90%;
+    width: 400px;
+    border: 4px solid #ff99cc;
+    transition: transform 0.3s ease;
+}
+
+/* Judul Besar */
+h1, h2 {
+    font-family: 'Fredoka One', cursive; /* Font judul yang gembul */
+    color: #ff66a3;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0px #ffe6f2;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #884d68;
+}
+
+/* Gaya Gambar Loopy */
+.loopy-bounce {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Agar gambar tidak gepeng */
+    border-radius: 50%;
+    border: 5px solid #ff99cc;
+    animation: bounce 2s infinite; /* Animasi memantul */
+    margin-bottom: 1rem;
+    background-color: #fff; /* Placeholder warna putih kalau gambar belum ada */
+}
+
+/* Tombol Buka Hadiah */
+button {
+    background-color: #ff66a3;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    margin-top: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 4px 0 #d63384; /* Efek tombol 3D */
+}
+
+button:active {
+    transform: translateY(4px); /* Efek ditekan */
+    box-shadow: none;
+}
+
+button:hover {
+    background-color: #ff4d94;
+    transform: scale(1.05);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.decoration {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.message-box {
+    background: #fff0f5;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px dashed #ff99cc;
+    margin-top: 15px;
+    min-height: 80px;
+    text-align: left;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* Animasi Memantul (Bounce) */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* --- KHUSUS NAMA MOCHI --- */
+.mochi-name {
+    display: inline-block;
+    color: #ff1493; /* Pink yang lebih tua biar kontras */
+    font-weight: 800;
+    cursor: pointer;
+    /* Animasi kenyal seperti Mochi */
+    animation: mochiWiggle 2s infinite ease-in-out;
+}
+
+.mochi-name:hover {
+    color: #ff69b4;
+    transform: scale(1.2) rotate(-5deg);
+    transition: all 0.3s ease;
+}
+
+/* Keyframes untuk efek kenyal */
+@keyframes mochiWiggle {
+    0%, 100% { transform: scale(1, 1); }
+    25% { transform: scale(1.1, 0.9); } /* Melebar (gepeng) */
+    50% { transform: scale(0.9, 1.1); } /* Meninggi (kurus) */
+    75% { transform: scale(1.05, 0.95); }
+}
+
+/* Responsif untuk HP */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+}
+
+/* --- MUSIC PLAYER STYLES --- */
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 3px solid #ffb3d9;
+    width: fit-content;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+}
+
+.music-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    margin-top: 0; /* Override margin dari style button umum */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1;
+    background-color: #ff66a3;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.visualizer {
+    display: flex;
+    align-items: flex-end;
+    height: 20px;
+    gap: 4px;
+}
+
+.bar {
+    width: 5px;
+    background-color: #ff66a3;
+    border-radius: 2px;
+    animation: wave 1s infinite ease-in-out;
+}
+
+.bar:nth-child(1) { animation-duration: 0.6s; height: 10px; }
+.bar:nth-child(2) { animation-duration: 0.8s; height: 15px; }
+.bar:nth-child(3) { animation-duration: 0.5s; height: 20px; }
+.bar:nth-child(4) { animation-duration: 0.7s; height: 12px; }
+.bar:nth-child(5) { animation-duration: 0.9s; height: 18px; }
+
+/* Saat lagu dipause, animasi berhenti dan bar jadi pendek */
+.visualizer.paused .bar {
+    animation-play-state: paused;
+    height: 5px !important;
+    transition: height 0.3s;
+}
+
+@keyframes wave {
+    0%, 100% { height: 5px; }
+    50% { height: 20px; }
+}
+
+/* --- SLIDESHOW STYLES --- */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 1rem auto;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #ffb3d9;
+    background: #fff;
+}
+
+.slide-img {
+    width: 100%;
+    height: 250px; /* Tinggi tetap agar layout tidak loncat */
+    object-fit: cover; /* Gambar akan dipotong rapi (crop) jika ukurannya beda */
+    display: block;
+}
+
+.slide-caption {
+    background-color: rgba(255, 230, 242, 0.9);
+    color: #d63384;
+    padding: 8px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-top: 1px solid #ffb3d9;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #ff66a3;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(255, 102, 163, 0.8);
+    color: white;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* --- KUPON HADIAH STYLES --- */
+.coupon-section {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.coupon-section h3 {
+    font-size: 1.3rem;
+    color: #ff66a3;
+    margin-bottom: 1rem;
+}
+
+.coupons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.coupon {
+    background: #fff;
+    border: 2px dashed #ff66a3;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #d63384;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.coupon:hover {
+    background: #ffe6f2;
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.coupon.selected {
+    background: #ff66a3;
+    color: white;
+    border-color: #ff66a3;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 102, 163, 0.4);
+}
+
+/* --- TOMBOL WHATSAPP --- */
+.btn-wa {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #25D366; /* Warna Hijau WA */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #128C7E;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-wa:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+}
+
+.btn-wa:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}

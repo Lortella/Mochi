@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD Mochi Sayang! 🎂</title>
+    
+    <!-- Menghubungkan dengan file CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Lucu dari Google Fonts (Biar estetik) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Halaman Pembuka (Landing Page) -->
+    <div id="landing-page" class="container">
+        <div class="loopy-box">
+            <!-- Gambar ini akan muncul jika file loopy1.jpg sudah ada di folder assets -->
+            <img src="assets/loopy1.png" alt="Foto Loopy Lucu" class="loopy-bounce">
+        </div>
+        
+        <!-- Nama Mochi dengan efek animasi -->
+        <h1>Hai, <span class="mochi-name">Mochi</span> Sayang! 💖</h1>
+        
+        <p>Ada kejutan kecil buat kamu...</p>
+        <p style="font-size: 0.8rem; color: #aaa;">(Klik tombol di bawah ya)</p>
+        <button id="btn-buka">Buka Hadiah 🎁</button>
+    </div>
+
+    <!-- Halaman Ucapan (Akan muncul setelah tombol ditekan) -->
+    <div id="main-content" class="container hidden">
+        <div class="decoration">🎈 ✨ 🎀</div>
+        
+        <!-- Slideshow Foto Kenangan -->
+        <div class="slideshow-container">
+            <img id="slide-img" src="" alt="Kenangan Kita" class="slide-img">
+            <p id="slide-caption" class="slide-caption"></p>
+            <button class="prev-btn" id="prev-btn">❮</button>
+            <button class="next-btn" id="next-btn">❯</button>
+        </div>
+        
+        <h2 id="greeting">Happy Birthday, Peris Sayang! 🥳</h2>
+        
+        <div class="message-box">
+            <!-- Teks akan diketik otomatis oleh script.js -->
+            <p id="typing-text"></p>
+        </div>
+
+        <!-- Bagian Kupon Hadiah -->
+        <div class="coupon-section">
+            <h3>🎁 Pilih Hadiah Kamu 🎁</h3>
+            <div class="coupons">
+                <div class="coupon">Eskrim 🍦</div>
+                <div class="coupon">Dimsum 🥟</div>
+                <div class="coupon">Kue 🍰</div>
+                <div class="coupon">Kado Barang 🎁</div>
+            </div>
+            <p style="font-size: 0.8rem; color: #aaa; margin-top: 10px;">*Klik kupon yang kamu mau, terus kirim ke WhatsApp ya!</p>
+            
+            <!-- Ganti 628xxxxxxxxxx dengan nomor WA kamu -->
+            <a href="https://wa.me/628551487338?text=Halo%20sayang,%20aku%20udah%20buka%20webnya!%20Makasih%20yaaa%20💖" target="_blank" class="btn-wa" id="btn-wa">Kirim ke WhatsApp 💬</a>
+        </div>
+
+        <div class="footer">
+            <p>Dibuat dengan ❤️ spesial buat kamu.</p>
+        </div>
+    </div>
+
+    <!-- Audio Player (Tersembunyi) -->
+    <audio id="bg-music" loop>
+        <!-- Musik akan bunyi jika file musik.mp3 sudah ada di folder assets -->
+        <source src="assets/musik.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Player Control (Fixed di Pojok Kanan Bawah) -->
+    <div class="music-control hidden">
+        <button id="music-toggle" class="music-btn">⏸️</button>
+        <div id="visualizer" class="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <!-- Library untuk efek kertas warna-warni (Confetti) -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    
+    <!-- Menghubungkan dengan file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
